@@ -1,15 +1,18 @@
 
 
-export const getCars = async () => {
-    console.log('hola')
+// export const getCars = () => {
 
-    const url = `https://challenge.agenciaego.tech/models#`;
-    console.log(url)
 
-    const resp = await fetch(url);
-    console.log(resp)
-    const respJSON = await resp.json();
+//     const url = 'https://challenge.agenciaego.tech/models#';
 
-    console.log(respJSON);
+//     fetch(url)
+//         .then(response => response.json())
+//         .then(data => console.log(data));
 
-}
+//     // const resp = await fetch(url);
+//     // console.log(resp)
+//     // const data = await resp.json();
+
+//     // console.log(data);
+
+// }

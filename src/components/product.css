@@ -1,0 +1,30 @@
+.product__box {
+    text-align: center;
+    width: 60%;
+    margin-top: 8%;
+}
+.product__box h2 {
+    font-family: Montserrat-SemiBold, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.07;
+    letter-spacing: -0.65px;
+    color: #000000;
+}
+
+.product__box p {
+    font-family: Montserrat-Regular, sans-serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.28px;
+    color: #191919;
+}
+
+.product__box img {
+    width: 100%;
+}

@@ -12,7 +12,7 @@ const Navbar = () => {
                     className="logo"
                 />
 
-                <a href="#" class="navbar__button"><i class="fas fa-bars"></i></a>
+                <a href="#" className="navbar__button"><i className="fas fa-bars"></i></a>
 
             </header>
             <hr />

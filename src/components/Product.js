@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import ProductItem from './ProductItem';
 import './product.css';
 
 const Product = () => {
@@ -19,6 +20,7 @@ const Product = () => {
                 const result = await axios(url);
 
                 setData(result.data);
+
             } catch (error) {
                 setError(true);
             }
@@ -29,8 +31,6 @@ const Product = () => {
         fetchData();
     }, [url]);
 
-
-
     return (
         <>
 
@@ -39,39 +39,23 @@ const Product = () => {
             {isLoaded ? (
                 <div>Loading...</div>
             ) : (
-                    <ul>
-                        {data.map(item => (
-                            <li key={item.name}>
-                                {item.name}
-                            </li>
-                        ))}
-                    </ul>
+
+                    <>
+                        {
+                            data.map(item => (
+                                <ProductItem
+                                    key={item.id}
+                                    {...item}
+                                />
+                            ))
+                        }
+                    </>
+
                 )}
 
         </>
-    );
-
-
-
+    )
 
 }
-
-
-// return (
-
-//     <div className="product__box">
-//         {
-
-//         }
-//         <h2>Etios</h2>
-//         <p>2019 | $815.900</p>
-//         <img src="images/pngocean.com.png" alt="Foto de auto" />
-//     </div>
-
-
-// )
-// }
-
-// }
 
 export default Product

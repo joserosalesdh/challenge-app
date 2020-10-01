@@ -1,45 +1,59 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './product.css';
 
 const Product = () => {
 
-    const [error, setError] = useState(null);
+    const [error, setError] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [items, setItems] = useState([]);
+    const [data, setData] = useState([]);
 
+    const url = "https://challenge.agenciaego.tech/models#";
 
     useEffect(() => {
-        fetch("https://challenge.agenciaego.tech/models#")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setIsLoaded(true);
-                    setItems(result.models);
-                    console.log(result)
-                    console.log(result.models)
-                },
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            )
-    }, [])
+        const fetchData = async () => {
+            setError(false);
+            setIsLoaded(true);
 
-    // if (error) {
-    //     return <div>Error: {error.message}</div>;
-    // } else if (!isLoaded) {
-    //     return <div>Loading...</div>;
-    // } else {
+            try {
+                const result = await axios(url);
+
+                setData(result.data);
+            } catch (error) {
+                setError(true);
+            }
+
+            setIsLoaded(false);
+        };
+
+        fetchData();
+    }, [url]);
+
+
+
     return (
-        <h1>Hola Mundo</h1>
-        // <ul>
-        //     {items.map(item => (
-        //         <li key={item.name}>
-        //             {item.name} {item.price}
-        //         </li>
-        //     ))}
-        // </ul>
+        <>
+
+            {error && <div>Something went wrong ...</div>}
+
+            {isLoaded ? (
+                <div>Loading...</div>
+            ) : (
+                    <ul>
+                        {data.map(item => (
+                            <li key={item.name}>
+                                {item.name}
+                            </li>
+                        ))}
+                    </ul>
+                )}
+
+        </>
     );
+
+
+
+
 }
 
 

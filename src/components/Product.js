@@ -23,6 +23,7 @@ const Product = () => {
 
             } catch (error) {
                 setError(true);
+                console.log(error)
             }
 
             setIsLoaded(false);

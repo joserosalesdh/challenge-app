@@ -1,21 +1,29 @@
 import React from 'react'
+import { useState } from 'react';
 // import PropTypes from 'prop-types';
 
 const GifGridItem = ({ name, photo, price, year }) => {
 
+    const [display, setDisplay] = useState("none");
+
     const handleMouseOver = (e) => {
         e.preventDefault();
-        console.log('pase por aca');
+        setDisplay('inline')
     }
+    // const handleOnBlur = (e) => {
+    //     e.preventDefault();
+    //     setDisplay(display)
+    // }
+
     const style = {
-        display: "none",
+        display: display,
     }
 
     return (
         <div
             className="product__box"
             onMouseOver={handleMouseOver}
-
+        // onBlur={handleOnBlur}
         >
 
             <h2> {name} </h2>

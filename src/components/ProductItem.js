@@ -5,33 +5,43 @@ import { useState } from 'react';
 const GifGridItem = ({ name, photo, price, year }) => {
 
     const [display, setDisplay] = useState("none");
+    const [color, setColor] = useState("#000000");
 
     const handleMouseOver = (e) => {
         e.preventDefault();
-        setDisplay('inline')
+        setDisplay('inline');
+        setColor("#FF0000");
     }
-    // const handleOnBlur = (e) => {
-    //     e.preventDefault();
-    //     setDisplay(display)
-    // }
+
+    const handleOut = (e) => {
+        e.preventDefault();
+        setDisplay('none');
+        setColor('#000000');
+    }
+
 
     const style = {
         display: display,
+        animationDuration: "1.5s"
+    }
+
+    const h2Style = {
+        color: color
     }
 
     return (
         <div
             className="product__box"
             onMouseOver={handleMouseOver}
-        // onBlur={handleOnBlur}
+            onMouseOut={handleOut}
         >
 
-            <h2> {name} </h2>
+            <h2 style={h2Style}> {name} </h2>
             <p>{year} | ${price}</p>
             <img src={photo} alt={name} />
             <button
                 type="button"
-                className="btn btn-dark"
+                className="btn btn-dark animate__animated animate__fadeInDown"
                 style={style}
             >
                 Ver Modelo

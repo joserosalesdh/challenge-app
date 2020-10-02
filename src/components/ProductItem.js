@@ -7,6 +7,9 @@ const GifGridItem = ({ name, photo, price, year }) => {
         e.preventDefault();
         console.log('pase por aca');
     }
+    const style = {
+        display: "none",
+    }
 
     return (
         <div
@@ -21,7 +24,7 @@ const GifGridItem = ({ name, photo, price, year }) => {
             <button
                 type="button"
                 className="btn btn-dark"
-
+                style={style}
             >
                 Ver Modelo
             </button>

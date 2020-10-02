@@ -28,3 +28,12 @@
 .product__box img {
     width: 100%;
 }
+
+.btn {
+    border-radius:28px;
+    cursor:pointer;
+    font-family:Arial;
+    font-weight: bold;
+    font-size:17px;
+    padding: 4% 15%;
+}

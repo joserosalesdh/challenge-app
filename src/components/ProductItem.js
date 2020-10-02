@@ -3,12 +3,28 @@ import React from 'react'
 
 const GifGridItem = ({ name, photo, price, year }) => {
 
+    const handleMouseOver = (e) => {
+        e.preventDefault();
+        console.log('pase por aca');
+    }
+
     return (
-        <div className="product__box">
+        <div
+            className="product__box"
+            onMouseOver={handleMouseOver}
+
+        >
 
             <h2> {name} </h2>
             <p>{year} | ${price}</p>
-            <img src={photo} alt="Foto de auto" />
+            <img src={photo} alt={name} />
+            <button
+                type="button"
+                className="btn btn-dark"
+
+            >
+                Ver Modelo
+            </button>
 
         </div>
     )

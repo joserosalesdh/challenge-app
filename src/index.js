@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './Home';
+import CarsApp from './CarsApp'
 
 
 ReactDOM.render(
 
-  <Home />,
+  <CarsApp />,
 
   document.getElementById('root')
 );

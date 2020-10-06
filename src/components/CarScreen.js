@@ -1,20 +1,29 @@
 import React, { useMemo } from 'react'
 import { Redirect, useParams } from 'react-router-dom';
-import { getCarById } from '../selectors/getCarById';
 
-const CarScreen = ({ history }) => {
+const CarScreen = () => {
+
+    const getCarById = (id) => {
+
+        return heroes.find(heroe => heroe.id === id);
+    };
 
     const { carId } = useParams();
 
     const car = useMemo(() => getCarById(carId), [carId])
+    console.log(car)
 
-    if (!car) { //si el hero no existe
+    if (!car) {
         return <Redirect to="/" />
     };
+
+
 
     return (
         <div>
             <h1>Car Screen</h1>
+
+
         </div>
     )
 }

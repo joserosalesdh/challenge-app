@@ -5,11 +5,13 @@ import './product.css';
 
 const Product = () => {
 
+
+
     const [error, setError] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
     const [data, setData] = useState([]);
 
-    const url = "https://challenge.agenciaego.tech/models#";
+    const url = `https://challenge.agenciaego.tech/models#`;
 
     useEffect(() => {
         const fetchData = async () => {
@@ -30,6 +32,7 @@ const Product = () => {
 
         fetchData();
     }, [url]);
+
 
     return (
         <>

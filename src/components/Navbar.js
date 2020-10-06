@@ -1,10 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react'
+import { Link, useHistory } from 'react-router-dom'
 import './Navbar.css';
 
 const Navbar = () => {
+
+    const history = useHistory();
+
     return (
         <>
-            <header className="navbar__container">
+
+            <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+
+                <Link
+                    className="navbar-brand"
+                    to="/"
+                >
+                    Asociaciones
+                </Link>
+
+            </nav>
+
+
+
+
+
+
+            {/* <header className="navbar__container">
 
                 <img
                     src="images/logo.png"
@@ -14,8 +35,8 @@ const Navbar = () => {
 
                 <a href="#" className="navbar__button"><i className="fas fa-bars"></i></a>
 
-            </header>
-            <hr />
+            </header> */}
+            {/* <hr /> */}
         </>
     )
 }

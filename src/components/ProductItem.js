@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 
-const GifGridItem = ({ name, photo, price, year }) => {
+const GifGridItem = ({ id, name, photo, price, year }) => {
 
     const [display, setDisplay] = useState("none");
     const [color, setColor] = useState("#000000");
@@ -39,14 +40,16 @@ const GifGridItem = ({ name, photo, price, year }) => {
             <h2 style={h2Style}> {name} </h2>
             <p>{year} | ${price}</p>
             <img src={photo} alt={name} />
-            <button
-                type="button"
-                className="btn btn-dark animate__animated animate__fadeInDown"
-                style={style}
-            >
-                Ver Modelo
-            </button>
 
+            <Link to={`./car/${id}`} >
+                <button
+                    type="button"
+                    className="btn btn-dark animate__animated animate__fadeInDown"
+                    style={style}
+                >
+                    Ver Modelo
+                </button>
+            </Link>
         </div>
     )
 }

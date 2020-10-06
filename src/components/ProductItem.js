@@ -41,7 +41,9 @@ const GifGridItem = ({ id, name, photo, price, year }) => {
             <p>{year} | ${price}</p>
             <img src={photo} alt={name} />
 
-            <Link to={`./car/${id}`} >
+            <Link
+                to={`./car/${id}`}
+            >
                 <button
                     type="button"
                     className="btn btn-dark animate__animated animate__fadeInDown"

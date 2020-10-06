@@ -1,38 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import ProductItem from './ProductItem';
 import './product.css';
+import { useRequest } from '../hooks/useRequest';
 
 const Product = () => {
 
-
-
-    const [error, setError] = useState(false);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [data, setData] = useState([]);
-
-    const url = `https://challenge.agenciaego.tech/models#`;
-
-    useEffect(() => {
-        const fetchData = async () => {
-            setError(false);
-            setIsLoaded(true);
-
-            try {
-                const result = await axios(url);
-
-                setData(result.data);
-
-            } catch (error) {
-                setError(true);
-            }
-
-            setIsLoaded(false);
-        };
-
-        fetchData();
-    }, [url]);
-
+    const { data, isLoaded, error } = useRequest(`https://challenge.agenciaego.tech/models#`);
 
     return (
         <>

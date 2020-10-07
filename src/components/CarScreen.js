@@ -6,18 +6,11 @@ const CarScreen = () => {
 
     const { carId } = useParams();
 
-    const idCorrecto = carId - 1;
-
-    console.log(carId)
-    console.log(idCorrecto)
-
     const { data, isLoaded, error } = useRequest(`https://challenge.agenciaego.tech/models`);
 
-    // console.log(data[carId - 1])
+    const resultado = data.find(auto => auto.id == carId);
 
-    const autoEncontrado = data.find(item => item.id === carId);
-
-    console.log(autoEncontrado)
+    console.log(resultado)
 
     return (
         <div>
@@ -29,14 +22,7 @@ const CarScreen = () => {
             ) : (
 
                     <>
-                        <h1>Car Screen {carId} </h1>
-
-                        {
-                            data.find(item => (
-                                item.id === carId
-                            ))
-
-                        }
+                        <h1> {resultado.id} </h1>
 
                     </>
 

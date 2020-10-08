@@ -7,25 +7,29 @@ const Product = () => {
 
     const { data, isLoaded, error } = useRequest(`https://challenge.agenciaego.tech/models#`);
 
-    const deMenorAMayorPrecio = data.sort((a, b) => {
-        return (a.price - b.price)
-    })
-    console.log(deMenorAMayorPrecio);
+    // const deMenorAMayorPrecio = data.sort((a, b) => {
+    //     return (a.price - b.price)
+    // })
+    // console.log(deMenorAMayorPrecio);
 
-    const deMayorAMenorPrecio = data.sort((a, b) => {
-        return (b.price - a.price)
-    })
-    console.log(deMayorAMenorPrecio);
+    // const deMayorAMenorPrecio = data.sort((a, b) => {
+    //     return (b.price - a.price)
+    // })
+    // console.log(deMayorAMenorPrecio);
 
-    const masNuevosPrimero = data.sort((a, b) => {
-        return (b.year - a.year)
-    });
-    console.log(masNuevosPrimero);
+    // const masNuevosPrimero = data.sort((a, b) => {
+    //     return (b.year - a.year)
+    // });
+    // console.log(masNuevosPrimero);
 
-    const masViejosPrimero = data.sort((a, b) => {
-        return (a.year - b.year)
-    });
-    console.log(masViejosPrimero);
+    // const masViejosPrimero = data.sort((a, b) => {
+    //     return (a.year - b.year)
+    // });
+    // console.log(masViejosPrimero);
+
+    const autosFiltrados = data.filter(item => item.segment.includes('Autos'));
+    console.log(autosFiltrados);
+
 
     return (
         <>

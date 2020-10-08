@@ -10,7 +10,7 @@ const CarScreen = () => {
 
     const resultado = data.find(auto => auto.id == carId);
 
-    console.log(resultado)
+    const resultadoJson = JSON.parse(resultado)
 
     return (
         <div>
@@ -22,7 +22,7 @@ const CarScreen = () => {
             ) : (
 
                     <>
-                        <h1> {resultado.id} </h1>
+                        <h1> {resultadoJson} </h1>
 
                     </>
 

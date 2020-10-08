@@ -60,7 +60,7 @@
     margin-bottom: 3%;
 }
 
-.container__box-grid h4 {
+.container__box-grid option {
     font-family: Montserrat-SemiBold, sans-serif;
     font-size: 1.1rem;
     font-weight: 600;

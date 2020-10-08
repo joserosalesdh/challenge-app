@@ -7,12 +7,25 @@ const Product = () => {
 
     const { data, isLoaded, error } = useRequest(`https://challenge.agenciaego.tech/models#`);
 
-    const handlePU = (e) => {
-        e.preventDefault();
-        if (data.segment === "Pickups y Comerciales") {
-            return console.log("soy un apick up")
-        }
-    }
+    // const deMenorAMayorPrecio = data.sort((a, b) => {
+    //     return (a.price - b.price)
+    // })
+    // console.log(deMenorAMayorPrecio);
+
+    // const deMayorAMenorPrecio = data.sort((a, b) => {
+    //     return (b.price - a.price)
+    // })
+    // console.log(deMayorAMenorPrecio);
+
+    // const masNuevosPrimero = data.sort((a, b) => {
+    //     return (b.year - a.year)
+    // });
+    // console.log(masNuevosPrimero);
+
+    const masViejosPrimero = data.sort((a, b) => {
+        return (a.year - b.year)
+    });
+    console.log(masViejosPrimero);
 
     return (
         <>
@@ -27,7 +40,7 @@ const Product = () => {
                         <select className="container__box-grid--left">
                             <option value="Todos">Filtrar por</option>
                             <option value="Autos">Autos</option>
-                            <option onClick={handlePU} value="Pickups">Pickups</option>
+                            <option value="Pickups">Pickups</option>
                             <option value="SUVs y Crossovers">SUVs y Crossovers</option>
                         </select>
                     </div>

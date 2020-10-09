@@ -27,9 +27,14 @@ const Product = () => {
     // });
     // console.log(masViejosPrimero);
 
-    const autosFiltrados = data.filter(item => item.segment.includes('Autos'));
-    console.log(autosFiltrados);
+    // const autosFiltrados = data.filter(item => item.segment.includes('Autos'));
+    // console.log(autosFiltrados);
 
+    // const pickupsYComercialesFiltrados = data.filter(item => item.segment.includes('Pickups y Comerciales'));
+    // console.log(pickupsYComercialesFiltrados);
+
+    const suvsYCrossoversFiltrados = data.filter(item => item.segment.includes('SUVs y Crossovers'));
+    console.log(suvsYCrossoversFiltrados);
 
     return (
         <>

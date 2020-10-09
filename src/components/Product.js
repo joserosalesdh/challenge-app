@@ -7,34 +7,27 @@ const Product = () => {
 
     const { data, isLoaded, error } = useRequest(`https://challenge.agenciaego.tech/models#`);
 
-    // const deMenorAMayorPrecio = data.sort((a, b) => {
-    //     return (a.price - b.price)
-    // })
-    // console.log(deMenorAMayorPrecio);
+    const deMenorAMayorPrecio = data.sort((a, b) => {
+        return (a.price - b.price)
+    });
 
-    // const deMayorAMenorPrecio = data.sort((a, b) => {
-    //     return (b.price - a.price)
-    // })
-    // console.log(deMayorAMenorPrecio);
+    const deMayorAMenorPrecio = data.sort((a, b) => {
+        return (b.price - a.price)
+    });
 
-    // const masNuevosPrimero = data.sort((a, b) => {
-    //     return (b.year - a.year)
-    // });
-    // console.log(masNuevosPrimero);
+    const masNuevosPrimero = data.sort((a, b) => {
+        return (b.year - a.year)
+    });
 
-    // const masViejosPrimero = data.sort((a, b) => {
-    //     return (a.year - b.year)
-    // });
-    // console.log(masViejosPrimero);
+    const masViejosPrimero = data.sort((a, b) => {
+        return (a.year - b.year)
+    });
 
-    // const autosFiltrados = data.filter(item => item.segment.includes('Autos'));
-    // console.log(autosFiltrados);
+    const autosFiltrados = data.filter(item => item.segment.includes('Autos'));
 
-    // const pickupsYComercialesFiltrados = data.filter(item => item.segment.includes('Pickups y Comerciales'));
-    // console.log(pickupsYComercialesFiltrados);
+    const pickupsYComercialesFiltrados = data.filter(item => item.segment.includes('Pickups y Comerciales'));
 
     const suvsYCrossoversFiltrados = data.filter(item => item.segment.includes('SUVs y Crossovers'));
-    console.log(suvsYCrossoversFiltrados);
 
     return (
         <>

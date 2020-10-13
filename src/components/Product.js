@@ -29,6 +29,10 @@ const Product = () => {
 
     const suvsYCrossoversFiltrados = data.filter(item => item.segment.includes('SUVs y Crossovers'));
 
+    const handleFilterCar = () => {
+        autosFiltrados();
+    };
+
     return (
         <>
 
@@ -39,12 +43,15 @@ const Product = () => {
                     <div className="container__box-grid">
                         {/* <h4 className="container__box-grid--left">Filtrar por <a><i className="fas fa-chevron-down"></i></a> </h4>
                         <h4 className="container__box-grid--right">Ordenar por <a><i className="fas fa-chevron-down"></i></a></h4> */}
-                        <select className="container__box-grid--left">
+                        {/* <select className="container__box-grid--left">
                             <option value="Todos">Filtrar por</option>
                             <option value="Autos">Autos</option>
                             <option value="Pickups">Pickups</option>
                             <option value="SUVs y Crossovers">SUVs y Crossovers</option>
-                        </select>
+                        </select> */}
+                        <button
+                            onClick={handleFilterCar}
+                        >Filtrar Autos</button>
                     </div>
                 </section>
                 <hr />
